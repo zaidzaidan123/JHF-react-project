@@ -37,7 +37,7 @@ function App() {
         />
 
         <p>
-          {text}
+          My first Vite-React Project
         </p>
       </div>
       <p className="read-the-docs">
