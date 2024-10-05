@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import "./App.css";
+import Form from "./components/form/form";
 
 function App() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState("");
-
+  useEffect(() => {
+    setCount(10);
+  }, []);
   return (
     <>
       <div>
@@ -21,28 +24,8 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <Button
-          variant="contained"
-          onClick={() => setCount((count) => count + 1)}
-          sx={{ marginRight: "20px",height:"56px" }}
-        >
-          count is {count}
-        </Button>
-        <TextField
-          id="outlined-basic"
-          label="Outlined"
-          variant="outlined"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-
-        <p>
-          My first Vite-React Project
-        </p>
+        <Form />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
